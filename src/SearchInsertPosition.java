@@ -8,14 +8,10 @@ public class SearchInsertPosition
     public static int searchInsert(int[] nums, int target) 
     {
         for(int i = 0; i < nums.length; i++)
-        {
             if(nums[i] == target) return i;
-        }
         int[] newArray = insertTarget(nums, target);
         for(int i = 0; i < newArray.length; i++)
-        {
             if(newArray[i] == target) return i;
-        }
         return nums.length;
     }
 
@@ -32,14 +28,10 @@ public class SearchInsertPosition
             position = i + 1;
         }
         for(int i = 0; i < position; i++) 
-        {
             newArray[i] = array[i];
-        }
         newArray[position] = target; 
         for(int i = position + 1; i < newArray.length; i++) 
-        {
             newArray[i] = array[i - 1];
-        }
         return newArray;
     }
 
